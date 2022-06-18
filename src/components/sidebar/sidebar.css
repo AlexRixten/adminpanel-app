@@ -26,6 +26,7 @@
 }
 
 .sidebarListItem{
+    width: 100%;
     padding: 5px;
     margin-top: 5px;
     cursor: pointer;
@@ -41,4 +42,9 @@
 .sidebarIcon{
     margin-right: 5px;
     font-size: 20px !important;
+}
+
+li .active{
+    background-color: rgb(228, 228, 250);
+    color: #555;
 }

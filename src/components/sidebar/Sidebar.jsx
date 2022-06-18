@@ -1,6 +1,4 @@
 import React from 'react'
-import './sidebar.css'
-
 import {
     LineStyle,
     Timeline,
@@ -17,97 +15,129 @@ import {
 } from '@material-ui/icons';
 import { NavLink } from 'react-router-dom';
 
+import './sidebar.css'
+
 
 export default function Sidebar() {
+
+    const activeClassName = 'sidebarListItem link active'
     return (
         <div className='sidebar'>
             <div className="sidebarWrapper">
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Dashboard</h3>
                     <ul className="sidebarList">
-                        <NavLink className="link" to="/">
-                            <li className="sidebarListItem">
+
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/">
                                 <LineStyle className='sidebarIcon' /> Home
-                            </li>
-                        </NavLink>
-                        <NavLink className="link" to="/analytics">
-                            <li className="sidebarListItem">
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/analytics">
                                 <Timeline className='sidebarIcon' /> Analytics
-                            </li>
-                        </NavLink>
-                        <NavLink className="link" to="/sales">
-                            <li className="sidebarListItem">
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/sales">
                                 <TrendingUp className='sidebarIcon' /> Sales
-                            </li>
-                        </NavLink>
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Quick menu</h3>
                     <ul className="sidebarList">
-                        <NavLink className="link" to="/users">
-                            <li className="sidebarListItem">
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/users">
                                 <PersonOutline className='sidebarIcon' /> Users
-                            </li>
-                        </NavLink>
-                        <NavLink className="link" to="/products">
-                            <li className="sidebarListItem">
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/products">
                                 <Storefront className='sidebarIcon' /> Products
-                            </li>
-                        </NavLink>
-                        <NavLink className="link" to="/transactions">
-                            <li className="sidebarListItem">
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/transactions">
                                 <AttachMoney className='sidebarIcon' /> Transactions
-                            </li>
-                        </NavLink>
-                        <NavLink className="link" to="/reports">
-                            <li className="sidebarListItem">
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/reports">
                                 <BarChart className='sidebarIcon' /> Reports
-                            </li>
-                        </NavLink>
+                            </NavLink>
+                        </li>
                     </ul>
-                </div>
+                </div >
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Notifications</h3>
                     <ul className="sidebarList">
-                        <NavLink className="link" to="/mail">
-                            <li className="sidebarListItem">
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/mail">
                                 <MailOutline className='sidebarIcon' /> Mail
-                            </li>
-                        </NavLink>
-                        <NavLink className="link" to="/feedback">
-                            <li className="sidebarListItem">
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/feedback">
                                 <DynamicFeed className='sidebarIcon' /> Feedback
-                            </li>
-                        </NavLink>
-                        <NavLink className="link" to="/messages">
-                            <li className="sidebarListItem">
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/messages">
                                 <ChatBubbleOutline className='sidebarIcon' /> Messages
-                            </li>
-                        </NavLink>
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Staff</h3>
                     <ul className="sidebarList">
-                        <NavLink className="link" to="/manage">
-                            <li className="sidebarListItem">
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/staff-manage">
                                 <WorkOutline className='sidebarIcon' /> Manage
-                            </li>
-                        </NavLink>
-                        <NavLink className="link" to="/analytics">
-                            <li className="sidebarListItem">
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/staff-analytics">
                                 <Timeline className='sidebarIcon' /> Analytics
-                            </li>
-                        </NavLink>
-                        <NavLink className="link" to="/reports">
-                            <li className="sidebarListItem">
+                            </NavLink>
+
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? activeClassName : 'sidebarListItem link'
+                            } to="/staff-reports">
                                 <Report className='sidebarIcon' /> Reports
-                            </li>
-                        </NavLink>
+                            </NavLink>
+                        </li>
                     </ul>
-                </div>
-            </div>
-        </div>
+                </div >
+            </div >
+        </div >
     )
 }

@@ -33,7 +33,7 @@ export default function User(props) {
                     <div className="userShowTop">
                         <img src="" alt="" className="userShowImg" />
                         <div className="userShowTopTitle">
-                            <span className="userShowUsername">{data[userId].username}</span>
+                            <span className="userShowUsername">{data[userId-1].username}</span>
                             <span className="userShowUserTitle">Frontend Developer</span>
                         </div>
                     </div>
@@ -45,16 +45,16 @@ export default function User(props) {
                     </div>
                     <div className="userShowInfo">
                         <CalendarToday className='userShowIcon' />
-                        <span className="userShowInfoTitle">{data[userId].bithday}</span>
+                        <span className="userShowInfoTitle">{data[userId-1].bithday}</span>
                     </div>
                     <span className="userShowTitle">Contact Details</span>
                     <div className="userShowInfo">
                         <PhoneAndroid className='userShowIcon' />
-                        <span className="userShowInfoTitle">{data[userId].phone}</span>
+                        <span className="userShowInfoTitle">{data[userId-1].phone}</span>
                     </div>
                     <div className="userShowInfo">
                         <MailOutline className='userShowIcon' />
-                        <span className="userShowInfoTitle">{data[userId].email}</span>
+                        <span className="userShowInfoTitle">{data[userId-1].email}</span>
                     </div>
                     <div className="userShowInfo">
                         <LocationSearching className='userShowIcon' />
@@ -71,15 +71,15 @@ export default function User(props) {
                             </div>
                             <div className="userUpdateItem">
                                 <label>Full name</label>
-                                <input className='userUpdateInput' type="text" placeholder={data[userId].username} />
+                                <input className='userUpdateInput' type="text" placeholder={data[userId-1].username} />
                             </div>
                             <div className="userUpdateItem">
                                 <label>Email</label>
-                                <input className='userUpdateInput' type="text" placeholder={data[userId].email} />
+                                <input className='userUpdateInput' type="text" placeholder={data[userId-1].email} />
                             </div>
                             <div className="userUpdateItem">
                                 <label>Phone</label>
-                                <input className='userUpdateInput' type="text" placeholder={data[userId].phone} />
+                                <input className='userUpdateInput' type="text" placeholder={data[userId-1].phone} />
                             </div>
                             <div className="userUpdateItem">
                                 <label>Address</label>

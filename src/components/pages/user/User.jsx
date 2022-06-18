@@ -1,12 +1,25 @@
-import React from 'react'
-import { PermIdentity, CalendarToday, PhoneAndroid, MailOutline, LocationSearching, Publish } from '@material-ui/icons';
+import React, { useState } from 'react'
+import { useParams } from 'react-router-dom';
+import { userRows } from '../../dummyData';
+import { 
+    PermIdentity, 
+    CalendarToday, 
+    PhoneAndroid, 
+    MailOutline, 
+    LocationSearching, 
+    Publish 
+} from '@material-ui/icons';
 
 
 
 import './user.css'
 import { Link } from 'react-router-dom';
 
-export default function User() {
+export default function User(props) {
+    const { userId } = useParams();
+
+    const[data, setData] = useState(userRows)
+
     return (
         <div className='user'>
             <div className="userTitleContainer">
@@ -20,7 +33,7 @@ export default function User() {
                     <div className="userShowTop">
                         <img src="" alt="" className="userShowImg" />
                         <div className="userShowTopTitle">
-                            <span className="userShowUsername">Anna Becker</span>
+                            <span className="userShowUsername">{data[userId].username}</span>
                             <span className="userShowUserTitle">Frontend Developer</span>
                         </div>
                     </div>
@@ -32,16 +45,16 @@ export default function User() {
                     </div>
                     <div className="userShowInfo">
                         <CalendarToday className='userShowIcon' />
-                        <span className="userShowInfoTitle">10.12.1999</span>
+                        <span className="userShowInfoTitle">{data[userId].bithday}</span>
                     </div>
                     <span className="userShowTitle">Contact Details</span>
                     <div className="userShowInfo">
                         <PhoneAndroid className='userShowIcon' />
-                        <span className="userShowInfoTitle">+1 123 456 7</span>
+                        <span className="userShowInfoTitle">{data[userId].phone}</span>
                     </div>
                     <div className="userShowInfo">
                         <MailOutline className='userShowIcon' />
-                        <span className="userShowInfoTitle">annabeck99@gmail.com</span>
+                        <span className="userShowInfoTitle">{data[userId].email}</span>
                     </div>
                     <div className="userShowInfo">
                         <LocationSearching className='userShowIcon' />
@@ -58,15 +71,15 @@ export default function User() {
                             </div>
                             <div className="userUpdateItem">
                                 <label>Full name</label>
-                                <input className='userUpdateInput' type="text" placeholder='Anna Becker' />
+                                <input className='userUpdateInput' type="text" placeholder={data[userId].username} />
                             </div>
                             <div className="userUpdateItem">
                                 <label>Email</label>
-                                <input className='userUpdateInput' type="text" placeholder='annabeck99@gmail.com' />
+                                <input className='userUpdateInput' type="text" placeholder={data[userId].email} />
                             </div>
                             <div className="userUpdateItem">
                                 <label>Phone</label>
-                                <input className='userUpdateInput' type="text" placeholder='+1 123 456 7' />
+                                <input className='userUpdateInput' type="text" placeholder={data[userId].phone} />
                             </div>
                             <div className="userUpdateItem">
                                 <label>Address</label>

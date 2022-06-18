@@ -1,11 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import Chart from '../../chart/Chart'
 import { productData } from '../../dummyData'
 import { Publish } from '@material-ui/icons'
+import { productRows } from '../../dummyData'
 import './product.css'
 
 export default function Product() {
+
+    const {productId} = useParams()
+    const [product, setProduct] = useState(productRows) 
+
+    console.log(product[productId])
     return (
         <div className='product'>
             <div className="productTitleContainer">
@@ -21,24 +27,24 @@ export default function Product() {
                 <div className="productTopRight">
                     <div className="productInfoTop">
                         <img src="" alt="" className="productInfoImg" />
-                        <span className="productName">Macbook Pro</span>
+                        <span className="productName">{product[productId].name}</span>
                     </div>
                     <div className="productInfoBottom">
                         <div className="productInfoItem">
                             <span className="productInfoKey">id:</span>
-                            <span className="productInfoValue">123</span>
+                            <span className="productInfoValue">{product[productId].id}</span>
                         </div>
                         <div className="productInfoItem">
                             <span className="productInfoKey">sales:</span>
-                            <span className="productInfoValue">5123</span>
+                            <span className="productInfoValue">{product[productId].price}</span>
                         </div>
                         <div className="productInfoItem">
                             <span className="productInfoKey">active:</span>
-                            <span className="productInfoValue">yes</span>
+                            <span className="productInfoValue">{product[productId].status}</span>
                         </div>
                         <div className="productInfoItem">
                             <span className="productInfoKey">in stoke:</span>
-                            <span className="productInfoValue">no</span>
+                            <span className="productInfoValue">{product[productId].product ? 'yes' : 'no'}</span>
                         </div>
                     </div>
                 </div>

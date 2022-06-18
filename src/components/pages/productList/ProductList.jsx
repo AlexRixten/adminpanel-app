@@ -15,7 +15,7 @@ export default function ProductList() {
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         {
-            field: 'product', headerName: 'Product', width: 130, renderCell: (params) => {
+            field: 'product', headerName: 'Product', width: 200, renderCell: (params) => {
                 return (
                     <div className='productListItem'>
                         <img className='productListImg' src={params.row.img} alt="" />
@@ -47,7 +47,7 @@ export default function ProductList() {
             <DataGrid
                 rows={data}
                 columns={columns}
-                pageSize={8}
+                pageSize={10}
                 // rowsPerPageOptions={[5]}
                 checkboxSelection
                 disableSelectionOnClick
